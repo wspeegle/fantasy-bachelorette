@@ -1,6 +1,13 @@
 <!DOCTYPE HTML>
 <html>
     <link rel="stylesheet" href="style.css" />
+    <script src="Chart.bundle.js"></script>
+    <!-- Function to load data for chart -->
+    <script>
+    window.onload = function() {
+			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myLine = new Chart(ctx, config);
+		};</script>
     <title>Fantasy Bachelorette 2018</title>
     <!-- Create a let nav bar -->
     <div class = "leftNav">
@@ -19,33 +26,115 @@
                     <tbody class="table-hover">
                     <tr>
                     <td class="text-left">Chris</td>
-                    <td class="text-left">15</td>
+                    <td class="text-left">23</td>
                     </tr>
                     <tr>
                     <td class="text-left">Caroline</td>
-                    <td class="text-left">0</td>
-                    </tr>
-                    <tr>
-                    <td class="text-left">Jack</td>
-                    <td class="text-left">0</td>
-                    </tr>
-                    <tr>
-                    <td class="text-left">Wills</td>
-                    <td class="text-left">0</td>
-                    </tr>
-                    <tr>
-                    <td class="text-left">Brian</td>
-                    <td class="text-left">0</td>
+                    <td class="text-left">20</td>
                     </tr>
                     <tr>
                     <td class="text-left">Chelan</td>
-                    <td class="text-left">0</td>
+                    <td class="text-left">16</td>
                     </tr>
                     <tr>
                     <td class="text-left">Nick</td>
-                    <td class="text-left">0</td>
+                    <td class="text-left">16</td>
                     </tr>
+                    <tr>
+                    <td class="text-left">Wills</td>
+                    <td class="text-left">10</td>
+                    </tr>
+                    <tr>
+                    <td class="text-left">Jack</td>
+                    <td class="text-left">9</td>
+                    </tr>
+                    
+                    <tr>
+                    <td class="text-left">Brian</td>
+                    <td class="text-left">6</td>
+                    </tr>
+                    
                     </tbody>
                     </table>
-    </div>
+
+    <div class="chart">
+    <canvas id="myChart"></canvas>
+</div>
+</div>
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["Week 1", "Week 2"],
+        datasets: [{
+            label: 'Brian',
+            data: [2, 6],
+            fill: false,
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)'
+        },
+        {
+            label: 'Caroline',
+            data: [8, 20],
+            fill: false,
+            backgroundColor: 'rgb(255, 159, 64)',
+            borderColor: 'rgb(255, 159, 64)'
+        },
+        {
+            label: 'Chelan',
+            data: [7, 16],
+            fill: false,
+            backgroundColor: 'rgb(255, 205, 86)',
+            borderColor: 'rgb(255, 205, 86)'
+        },{
+            label: 'Chris',
+            data: [15, 23],
+            fill: false,
+            backgroundColor: 'rgb(75, 192, 192)',
+            borderColor: 'rgb(75, 192, 192)'
+        },{
+            label: 'Jack',
+            data: [2, 9],
+            fill: false,
+            backgroundColor: 'rgb(54, 162, 235)',
+            borderColor: 'rgb(54, 162, 235)'
+        },{
+            label: 'Nick',
+            data: [5, 16],
+            fill: false,
+            backgroundColor: 'rgb(201, 203, 207)',
+            borderColor: 'rgb(201, 203, 207)'
+        },{
+            label: 'Wills',
+            data: [3, 10],
+            fill: false,
+            backgroundColor: 'rgb(0, 0, 0)',
+            borderColor: 'rgb(0, 0, 0)'
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: "Points"
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true
+                },
+                scaleLabel:{
+                    display: true,
+                    labelString: "Week"
+                }
+            }]
+        }
+    }
+});
+</script>
 </html>

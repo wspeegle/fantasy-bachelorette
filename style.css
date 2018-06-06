@@ -97,6 +97,16 @@ html{
     width: 250px;
 }
 
+.chart{
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 70%;
+}
+
 
 /* Table format */
 div.table-title {
